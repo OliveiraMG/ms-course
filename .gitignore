@@ -1,0 +1,30 @@
+# Ignore the .idea directory
+.idea/
+
+# Ignore log files
+*.log
+
+# Ignore Maven/Gradle output directories
+target/
+build/
+
+# Ignore temporary files
+*.tmp
+*.swp
+
+# Ignore IDE-specific files
+*.iml
+*.ipr
+*.iws
+
+# Ignore MacOS-specific files
+.DS_Store
+
+# Ignore Eclipse project files
+.project
+.classpath
+.settings/
+
+# Ignore IntelliJ specific files
+*.iml
+
