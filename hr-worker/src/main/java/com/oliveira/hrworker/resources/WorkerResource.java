@@ -3,6 +3,7 @@ package com.oliveira.hrworker.resources;
 import com.oliveira.hrworker.entities.Worker;
 import com.oliveira.hrworker.repositories.WorkerRepository;
 import org.slf4j.Logger;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.env.Environment;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,12 +18,22 @@ import java.util.List;
 public class WorkerResource {
 
     private static Logger logger = org.slf4j.LoggerFactory.getLogger(WorkerResource.class);
+
+    @Value("${test.config}")
+    private String testConfig;
+
     private Environment env;
     private WorkerRepository repository;
 
-    public WorkerResource(WorkerRepository repository, Environment env) {
-        this.repository = repository;
+    public WorkerResource(Environment env, WorkerRepository repository) {
         this.env = env;
+        this.repository = repository;
+    }
+
+    @GetMapping(value = "/configs")
+    public ResponseEntity<Void> getConfigs() {
+        logger.info("CONFIG = " + testConfig);
+        return ResponseEntity.noContent().build();
     }
 
     @GetMapping
