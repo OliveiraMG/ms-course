@@ -5,9 +5,6 @@ import com.oliveira.hrpayroll.entities.Worker;
 import com.oliveira.hrpayroll.feignclients.WorkerFeignClient;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
-import java.util.Map;
-
 @Service
 public class PaymentService {
     private WorkerFeignClient workerFeignClient;
