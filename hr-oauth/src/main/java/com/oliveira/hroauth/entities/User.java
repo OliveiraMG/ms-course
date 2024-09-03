@@ -13,11 +13,12 @@ public class User implements Serializable {
     private String password;
     private Set<Role> roles = new HashSet<>();
 
-    public User(Long id, String name, String email, String password) {
+    public User(Long id, String name, String email, String password, Set<Role> roles) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
+        this.roles = roles;
     }
 
     @Override
@@ -63,6 +64,10 @@ public class User implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
     }
 
 }
